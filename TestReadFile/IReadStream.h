@@ -2,8 +2,6 @@
 class IReadStream
 {
 public:
-	
-	virtual void Init() = 0;
 
 	virtual void startRead() = 0;
 	virtual void readBlock() = 0;
@@ -11,7 +9,10 @@ public:
 	virtual ~IReadStream() {};
 };
 
-enum
+enum ReadStreamStatus
 {
-
+	STREAM_IDLE = 0,
+	STREAM_READ,
+	STREAM_WAIT,
+	STREAM_BUFFFULL,
 };
